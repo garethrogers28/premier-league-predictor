@@ -1,3 +1,16 @@
-# you should list here the libraries you will use in the project
-streamlit==0.85.0
-altair<5
+# Core app
+streamlit==1.60.0
+altair<6
+
+# Data handling
+pandas>=2.2,<3
+numpy>=1.26,<3
+
+# Machine learning
+scikit-learn>=1.5,<2
+joblib>=1.4,<2
+
+# Visualisation
+matplotlib>=3.9,<4
+seaborn>=0.13,<1
+plotly>=5.22,<6
