@@ -8,6 +8,7 @@ numpy>=1.26,<3
 
 # Machine learning
 scikit-learn>=1.5,<2
+xgboost>=3,<4
 joblib>=1.4,<2
 
 # Visualisation
