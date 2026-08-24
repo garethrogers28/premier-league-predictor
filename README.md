@@ -137,16 +137,27 @@ The dataset is split into training and test sets using stratification to preserv
 
 ### Heroku
 
-- The App live link is: https://YOUR_APP_NAME.herokuapp.com/
-- Set the runtime.txt Python version to a [Heroku-24](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-- The project was deployed to Heroku using the following steps.
+The application is deployed on Heroku and can be accessed here:
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+[Premier League High Scorer Predictor](https://premier-league-highscorer-f334f7b727e7.herokuapp.com/)
+
+To deploy the application to Heroku:
+
+1. Create an account at Heroku and create a new application, choosing a unique application name.
+
+2. Ensure the project contains the required deployment files, including `requirements.txt`, `Procfile`, `setup.sh` and `.python-version`.
+
+3. Push the completed project to a GitHub repository.
+
+4. From the Heroku application dashboard, open the **Deploy** section and select **GitHub** as the deployment method.
+
+5. Connect Heroku to GitHub, search for the project repository and select **Connect**.
+
+6. Select the `main` branch and choose **Deploy Branch**.
+
+7. Heroku will install the dependencies from `requirements.txt` and start the Streamlit application using the command defined in the `Procfile`.
+
+8. Once the build has completed successfully, select **Open App** to launch the deployed Streamlit application.
 
 ## Main Data Analysis and Machine Learning Libraries
 
