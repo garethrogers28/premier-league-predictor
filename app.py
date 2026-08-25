@@ -1,18 +1,23 @@
 import streamlit as st
+
 from app_pages.project_summary import project_summary_page
+from app_pages.player_analysis import player_analysis_page
+
 
 st.set_page_config(
-    page_title="Premier League Player Predictor",
+    page_title="Premier League Player Predictor"
 )
 
 page = st.sidebar.selectbox(
-    "Menu",
+    "Navigate",
     [
         "Project Summary",
-        "Player Analysis",
-        "High Scorer Predictor",
-        "Model Performance",
+        "Player Analysis"
     ]
 )
 
-project_summary_page()
+if page == "Project Summary":
+    project_summary_page()
+
+elif page == "Player Analysis":
+    player_analysis_page()
