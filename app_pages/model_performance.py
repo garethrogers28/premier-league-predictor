@@ -10,8 +10,12 @@ def model_performance_page():
 
     st.write(
         """
-        This page evaluates how well the final machine learning model performs
-        against the success criteria defined in the ML Business Case.
+        **Business Requirement 2:** Develop and evaluate a machine learning model
+        that can reliably identify potential high scorers using performance
+        statistics other than goals scored, supporting player recruitment decisions.
+
+        This page evaluates the baseline and tuned classification models against the
+        precision target defined in the ML Business Case.
         """
     )
 

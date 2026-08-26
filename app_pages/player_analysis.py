@@ -9,9 +9,12 @@ def player_analysis_page():
 
     st.write(
         """
-        An exploratory data analysis (EDA) was conducted on the Premier League Player dataset.
-        This page explores the characteristics associated with high-scoring
-        Premier League players and supports Business Requirement 1.
+        **Business Requirement 1:** Analyse Premier League player performance data
+        to identify the characteristics associated with high-scoring players.
+
+        An exploratory data analysis (EDA) was conducted on the Premier League
+        player dataset. The analysis explores positional, attacking, passing and
+        creative stats associated with the `HighScorer` target.
         """
     )
 
@@ -29,7 +32,7 @@ def player_analysis_page():
     st.markdown(
     """
     **Interpretation:**
-    
+
     Forwards have the highest percentage of players classified as high scorers,
     followed by midfielders. Defenders and goalkeepers rarely or never reach
     the 10-goal threshold.
