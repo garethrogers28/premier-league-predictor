@@ -71,7 +71,7 @@ def player_analysis_page():
     title="Average Attacking Statistics by High Scorer Classification"
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     st.markdown(
     """
@@ -110,7 +110,7 @@ def player_analysis_page():
         title="Average Passes and Creative Statistics by High Scorer Classification"
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     st.markdown(
     """

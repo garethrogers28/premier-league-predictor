@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def project_summary_page():
 
     st.title("Premier League High Scorer Predictor")

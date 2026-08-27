@@ -107,7 +107,7 @@ def model_performance_page():
     annotation_text="Business Target: 0.75 Precision"
 )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     st.markdown(
     """
@@ -161,7 +161,7 @@ def model_performance_page():
     annotation_text="Business Target: 0.75 Precision"
 )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     st.markdown(
     """
@@ -203,7 +203,7 @@ def model_performance_page():
     yaxis_title="Actual Class"
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     st.markdown(
         """
@@ -271,7 +271,7 @@ def model_performance_page():
     title="Tuned XGBoost Feature Importance"
 )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     st.markdown(
     """

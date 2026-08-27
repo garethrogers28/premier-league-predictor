@@ -3,6 +3,7 @@ import streamlit as st
 from app_pages.project_summary import project_summary_page
 from app_pages.player_analysis import player_analysis_page
 from app_pages.model_performance import model_performance_page
+from app_pages.high_scorer_predictor import high_scorer_predictor_page
 
 
 st.set_page_config(
@@ -14,7 +15,8 @@ page = st.sidebar.selectbox(
     [
         "Project Summary",
         "Player Analysis",
-        "Model Performance"
+        "Model Performance",
+        "High Scorer Predictor"
     ]
 )
 
@@ -26,3 +28,6 @@ elif page == "Player Analysis":
 
 elif page == "Model Performance":
     model_performance_page()
+
+elif page == "High Scorer Predictor":
+    high_scorer_predictor_page()
