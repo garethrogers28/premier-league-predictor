@@ -10,24 +10,24 @@ st.set_page_config(
     page_title="Premier League Player Predictor"
 )
 
-page = st.sidebar.selectbox(
+page = st.sidebar.radio(
     "Navigate",
     [
-        "Project Summary",
-        "Player Analysis",
-        "Model Performance",
-        "High Scorer Predictor"
+        "🏠 Project Summary",
+        "📊 Player Analysis",
+        "🎯 Model Performance",
+        "⚽ High Scorer Predictor"
     ]
 )
 
-if page == "Project Summary":
+if page == "🏠 Project Summary":
     project_summary_page()
 
-elif page == "Player Analysis":
+elif page == "📊 Player Analysis":
     player_analysis_page()
 
-elif page == "Model Performance":
+elif page == "🎯 Model Performance":
     model_performance_page()
 
-elif page == "High Scorer Predictor":
+elif page == "⚽ High Scorer Predictor":
     high_scorer_predictor_page()
