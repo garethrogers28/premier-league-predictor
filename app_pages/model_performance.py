@@ -14,34 +14,38 @@ def model_performance_page():
         that can reliably identify potential high scorers using performance
         statistics other than goals scored, supporting player recruitment decisions.
 
-        This page evaluates the baseline and tuned classification models against the
+        This page evaluates the **baseline and tuned classification models** against the
         precision target defined in the ML Business Case.
         """
     )
 
+    st.markdown("---")
+
     st.subheader("ML Business Target")
 
     st.markdown(
-    """
-    The primary success metric for the model is **precision** for the
-    `HighScorer=True` class.
+        """
+        The primary success metric for the model is **precision** for the
+        **`HighScorer=True` class.**
 
-    The model is considered successful if it achieves a precision of at least
-    **0.75** on unseen test data.
-    """
+        The model is considered successful if it achieves a precision of at least
+        **0.75 on unseen test data.**
+        """
     )
 
     st.metric(
-    label="Final Test Precision",
-    value="0.80",
-    delta="+0.05 above target"
-)
+        label="Final Test Precision",
+        value="0.80",
+        delta="+0.05 above target"
+    )
+
+    st.markdown("---")
 
     st.subheader("Pipeline Steps")
 
     st.markdown(
     """
-    The final machine learning pipeline consists of two stages applied in order:
+    The final machine learning pipeline consists of **two stages** applied in order:
 
     1. **Missing Value Imputation**
        - `SimpleImputer(strategy="median")` is used to replace missing predictor
@@ -53,7 +57,7 @@ def model_performance_page():
        - `XGBClassifier` performs the binary classification of players as
          high scorers or non-high scorers.
        - The classifier was optimised using `GridSearchCV` with 5-fold
-         cross-validation, using precision as the scoring metric.
+         cross-validation, using **precision as the scoring metric.**
 
     The best hyperparameters identified during optimisation were:
 
@@ -62,10 +66,11 @@ def model_performance_page():
     - `n_estimators`: **100**
     - `scale_pos_weight`: **1**
 
-    The final fitted pipeline is saved and used by the High Scorer Predictor
+    The **final fitted pipeline** is saved and used by the High Scorer Predictor
     to apply the same preprocessing and classification steps to new player data.
     """
 )
+    st.markdown("---")
 
     st.subheader("Baseline Model Comparison")
 
@@ -110,19 +115,20 @@ def model_performance_page():
     st.plotly_chart(fig, width='stretch')
 
     st.markdown(
-    """
-    **Interpretation:**
+        """
+        **Interpretation:**
 
-    XGBoost achieved the highest baseline precision at **0.70**, making it the
-    closest model to the required precision of **0.75**.
+        **XGBoost achieved the highest baseline precision at 0.70**, making it the
+        closest model to the required precision of **0.75**.
 
-    Random Forest achieved a similar F1-score, while Logistic Regression
-    achieved the highest recall but substantially lower precision.
+        Random Forest achieved a similar F1-score, while Logistic Regression
+        achieved the highest recall but substantially lower precision.
 
-    XGBoost was therefore selected for hyperparameter optimisation because it
-    performed best against the primary business metric.
-    """
-)
+        **XGBoost was therefore selected for hyperparameter optimisation** because it
+        performed best against the primary business metric.
+        """
+    )
+    st.markdown("---")
 
     st.subheader("Tuned XGBoost Performance")
 
@@ -164,21 +170,22 @@ def model_performance_page():
     st.plotly_chart(fig, width='stretch')
 
     st.markdown(
-    """
-    **Interpretation:**
+        """
+        **Interpretation:**
 
-    After hyperparameter optimisation, the tuned XGBoost model achieved a
-    precision of **0.80** on unseen test data, exceeding the business target
-    of **0.75**.
+        After hyperparameter optimisation, the tuned XGBoost model achieved a
+        **precision of 0.80 on unseen test data**, exceeding the business target
+        of **0.75**.
 
-    Recall decreased to **0.38**, meaning that the model misses more genuine
-    high scorers. This trade-off is acceptable within the defined business
-    case because reliable positive predictions are prioritised over identifying
-    every possible high scorer.
+        Recall decreased to **0.38**, meaning that the model misses more genuine
+        high scorers. **This trade-off is acceptable within the defined business
+        case** because reliable positive predictions are prioritised over identifying
+        every possible high scorer.
 
-    The final model therefore meets the defined ML business requirement.
-    """
+        **The final model therefore meets the defined ML business requirement.**
+        """
 )
+    st.markdown("---")
 
     st.subheader("Test Confusion Matrix")
 
@@ -208,22 +215,24 @@ def model_performance_page():
     st.markdown(
         """
         **Interpretation:**
-    
+
         On the unseen test data, the tuned XGBoost model:
-    
+
         - Correctly classified **1,594 non-high scorers**.
         - Incorrectly classified **4 non-high scorers as high scorers**.
         - Missed **26 genuine high scorers**.
         - Correctly identified **16 high scorers**.
-    
-        Of the 20 players predicted as high scorers, 16 were correctly classified.
+
+        Of the **20 players predicted as high scorers, 16 were correctly classified.**
         This resulted in a precision of **0.80** for the `HighScorer=True` class,
         exceeding the project's minimum target of **0.75**.
-    
-        The relatively low number of false-positive predictions aligns with the
-        business objective of prioritising reliable high-scorer recommendations.
+
+        The **relatively low number of false-positive predictions aligns with the
+        business objective** of prioritising reliable high-scorer recommendations.
         """
-        )
+)
+    
+    st.markdown("---")
 
     st.subheader("Feature Importance")
 
@@ -277,37 +286,38 @@ def model_performance_page():
     """
     **Interpretation:**
 
-    `Shots on target` is by far the most influential feature in the tuned
+    **`Shots on target` is by far the most influential feature** in the tuned
     XGBoost model, accounting for substantially more feature importance than
     any other predictor.
 
     Other features, including assists, passes per match, shooting accuracy
     and crosses, make smaller contributions to the model's predictions.
 
-    This indicates that shots on target is the strongest predictor used by
-    the final model when distinguishing between high scorers and non-high
+    This indicates that **shots on target is the strongest predictor used by
+    the final model** when distinguishing between high scorers and non-high
     scorers.
     """
 )
+    st.markdown("---")
 
     st.subheader("Conclusion")
 
     st.markdown(
     """
-    The tuned XGBoost model achieved a precision of **0.80** for the
+    The tuned XGBoost model achieved a **precision of 0.80** for the
     `HighScorer=True` class on unseen test data, exceeding the project's
     minimum business target of **0.75**.
 
-    The optimisation increased precision at the cost of recall, meaning the
+    The optimisation **increased precision at the cost of recall**, meaning the
     final model makes fewer false-positive high-scorer predictions but misses
     more genuine high scorers. This trade-off aligns with the defined business
-    case, where reliable positive predictions are prioritised.
+    case, where **reliable positive predictions are prioritised.**
 
-    Feature importance analysis identified **shots on target** as the dominant
-    predictor used by the final model, with other attacking, passing and
+    Feature importance analysis identified **shots on target as the dominant
+    predictor** used by the final model, with other attacking, passing and
     creative statistics making smaller contributions.
 
-    Overall, the final model satisfies **Business Requirement 2** and provides
+    Overall, **the final model satisfies Business Requirement 2** and provides
     a suitable basis for the interactive High Scorer Predictor.
     """
 )
