@@ -17,3 +17,7 @@ backgroundColor = "#292524"
 secondaryBackgroundColor = "#44403C"
 textColor = "#FAFAF9"
 primaryColor = "#F59E0B"
+
+[server]
+headless = true
+enableCORS = false
