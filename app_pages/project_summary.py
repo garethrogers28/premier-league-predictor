@@ -79,7 +79,7 @@ def project_summary_page():
         - Missing a genuine high scorer is considered less costly, so **recall is treated
         as a secondary metric.**
         - The model is considered successful if it achieves at least **0.75 precision**
-        for the `HighScorer` class on unseen test data.
+        for the **`HighScorer` class** on unseen test data.
 
         The model is intended to **support recruitment analysis rather than replace
         wider scouting and recruitment decision-making.**

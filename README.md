@@ -1,42 +1,16 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Premier League High Scorer Predictor
 
-## Template Instructions
+## Project Overview
 
-Welcome,
+This project is a data analytics and machine learning application designed to support player recruitment decisions for a Premier League football club.
 
-This is the Code Institute student template for the bring your own data project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+The project analyses historical Premier League player performance data across nine seasons, from 2015/16 to 2023/24, to investigate the characteristics associated with high-scoring players.
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+A supervised machine learning model is developed to classify whether a player demonstrates the characteristics of a `HighScorer`, defined as a player who scores 10 or more goals in a season. Goals scored are excluded from the predictor features to prevent data leakage and ensure the model identifies high-scoring characteristics using other player performance statistics.
 
-## How to use this repo
+The results of the data analysis and machine learning model are presented through an interactive Streamlit dashboard. The dashboard allows users to explore the key analytical findings, review the performance of the machine learning model, and enter player statistics to generate an interactive high-scorer prediction.
 
-1. Use this template to create your GitHub project repo
-
-1. In your newly created repo click on the green Code button.
-
-1. Then, from the Codespaces tab, click Create codespace on main.
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and `pip3 install -r requirements.txt`
-
-1. Open the jupyter_notebooks directory, and click on the notebook you want to open.
-
-1. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The application is intended to support recruitment analysis and scouting decisions rather than replace wider football knowledge and professional scouting processes.
 
 ## Dataset Content
 
