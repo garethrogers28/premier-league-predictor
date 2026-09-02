@@ -221,14 +221,16 @@ To deploy the application to Heroku:
 
 ## Credits
 
-- In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
+### Learning and Development Resources
 
-### Media
+- **Code Institute** - The Predictive Analytics course material and walkthrough projects were used as guidance for the overall project structure, machine learning workflow and Streamlit dashboard development.
+- **Pandas Documentation** - Used as a reference for data manipulation, cleaning and analysis.
+- **Scikit-learn Documentation** - Used as a reference for machine learning pipelines, preprocessing, model training, hyperparameter optimisation and model evaluation.
+- **XGBoost Documentation** - Used as a reference when developing and configuring the `XGBClassifier` model.
+- **Streamlit Documentation** - Used as a reference when developing and configuring the interactive dashboard.
+- **Plotly Documentation** - Used as a reference when creating interactive dashboard visualisations.
+- **ChatGPT** - Used as a development support tool for troubleshooting issues, explaining programming and machine learning concepts, and helping to quickly locate relevant areas of official documentation. All project code, analysis and implementation decisions were reviewed and understood as part of the development process.
 
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
+### Dataset
 
-## Acknowledgements (optional)
-
-- Thank the people who provided support through this project.
+The Premier League player statistics used in this project were obtained from Kaggle.
