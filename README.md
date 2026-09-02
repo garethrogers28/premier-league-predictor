@@ -47,10 +47,6 @@ The project has three business requirements:
 
 3. Present the key analytical findings and machine learning results through an interactive Streamlit dashboard to support the club's recruitment analysis.
 
-## Hypothesis and how to validate?
-
-- List here your project hypothesis(es) and how you envision validating it (them)
-
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
 ### Business Requirement 1 - Data Analysis and Visualisation
@@ -119,8 +115,57 @@ The dataset is split into training and test sets using stratification to preserv
 
 ## Dashboard Design
 
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-- Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
+The project results are presented through an interactive Streamlit dashboard consisting of four pages.
+
+### Project Summary
+
+The Project Summary page introduces the project and provides context for the analysis and machine learning tasks. It includes:
+
+- An overview of the project and its purpose.
+- A summary of the dataset used.
+- The three business requirements.
+- The machine learning business case and success criteria.
+
+### Player Analysis
+
+The Player Analysis page supports **Business Requirement 1** by presenting the main findings from the exploratory data analysis.
+
+The page includes:
+
+- Analysis of the relationship between playing position and high scorers.
+- Comparison of attacking statistics between high scorers and other players.
+- Comparison of passing and creative statistics between high scorers and other players.
+- Written interpretations explaining the key findings from each visualisation.
+
+### Model Performance
+
+The Model Performance page supports **Business Requirement 2** by presenting the development and evaluation of the machine learning model.
+
+The page includes:
+
+- The machine learning business target and primary success metric.
+- An overview of the final machine learning pipeline.
+- Comparison of the baseline classification models.
+- Performance of the optimised XGBoost model on training and unseen test data.
+- A confusion matrix showing the final model's classifications.
+- Feature importance showing which player statistics contributed most strongly to the model.
+- An interpretation of the final model's performance against the business requirement.
+
+### High Scorer Predictor
+
+The High Scorer Predictor page supports **Business Requirements 2 and 3** by allowing the user to interact with the final trained machine learning pipeline.
+
+The user can enter player performance statistics including appearances, position, shooting, attacking, passing and creative statistics.
+
+The submitted values are transformed into the same feature structure used during model training and passed to the saved machine learning pipeline.
+
+The dashboard then displays:
+
+- A classification indicating whether the player is identified as a potential high scorer.
+- The model probability associated with the high-scorer class.
+- A short explanation of the prediction.
+
+The prediction is intended to support recruitment analysis and should be considered alongside wider scouting information rather than as a standalone recruitment decision.
 
 ## Unfixed Bugs
 
