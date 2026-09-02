@@ -47,6 +47,34 @@ The project has three business requirements:
 
 3. Present the key analytical findings and machine learning results through an interactive Streamlit dashboard to support the club's recruitment analysis.
 
+## Epics and User Stories
+
+The project was developed around three main epics that reflect the business requirements and the needs of a recruitment analyst using the application.
+
+### Epic 1 - Player Performance Analysis
+
+The aim of this epic is to investigate the characteristics associated with high-scoring Premier League players.
+
+**User Story 1**
+
+As a recruitment analyst, I want to explore and compare historical player performance statistics so that I can understand the characteristics associated with high-scoring players.
+
+### Epic 2 - High Scorer Machine Learning Model
+
+The aim of this epic is to develop and evaluate a machine learning model capable of identifying players who demonstrate characteristics associated with high scorers.
+
+**User Story 2**
+
+As a recruitment analyst, I want a machine learning model that can reliably identify potential high scorers using performance statistics other than goals scored so that I can use the prediction to support recruitment decisions.
+
+### Epic 3 - Interactive Recruitment Dashboard
+
+The aim of this epic is to make the project's analysis and machine learning results accessible through an interactive dashboard.
+
+**User Story 3**
+
+As a recruitment analyst, I want to view the player analysis and model performance and enter player statistics to generate a high-scorer prediction so that I can use the project's findings through a simple interactive interface.
+
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
 ### Business Requirement 1 - Data Analysis and Visualisation
@@ -167,9 +195,56 @@ The dashboard then displays:
 
 The prediction is intended to support recruitment analysis and should be considered alongside wider scouting information rather than as a standalone recruitment decision.
 
-## Unfixed Bugs
+## Testing
 
-- You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+Testing was carried out throughout the project to ensure that the data processing, machine learning pipeline, Streamlit dashboard and deployed application functioned as expected.
+
+### Data and Machine Learning Testing
+
+The Jupyter notebooks were run during development to verify that each stage of the data pipeline completed successfully.
+
+The following areas were checked:
+
+- The nine Premier League season datasets were successfully combined into a single dataset.
+- Duplicate and invalid player-season records were identified and handled during data cleaning.
+- Data types and missing values were inspected and handled appropriately.
+- The `HighScorer` target was correctly created using the threshold of 10 or more goals in a season.
+- Features that directly revealed goals scored were excluded from the predictor features to prevent data leakage.
+- Training and test data were separated using a stratified split to preserve the proportion of high scorers.
+- Missing predictor values were handled within the machine learning pipeline.
+- Logistic Regression, Random Forest and XGBoost classifiers were evaluated on unseen test data.
+- The final optimised XGBoost model achieved a precision of **0.80** for the `HighScorer=True` class on unseen test data, exceeding the project success criterion of **0.75**.
+- The fitted machine learning pipeline was saved and successfully loaded by the Streamlit application.
+
+### Streamlit Dashboard Testing
+
+The Streamlit dashboard was manually tested to ensure that the application pages, visualisations and interactive predictor worked as expected.
+
+| Feature               | Test Performed                      | Expected Result                                                      | Result |
+| --------------------- | ----------------------------------- | -------------------------------------------------------------------- | ------ |
+| Application           | Launch the Streamlit application    | Application loads without errors                                     | Pass   |
+| Sidebar Navigation    | Select each page from the sidebar   | Selected page loads correctly                                        | Pass   |
+| Project Summary       | Open the Project Summary page       | Project information and business requirements are displayed          | Pass   |
+| Player Analysis       | Open the Player Analysis page       | Analysis and interactive visualisations are displayed correctly      | Pass   |
+| Model Performance     | Open the Model Performance page     | Model metrics, confusion matrix and feature importance are displayed | Pass   |
+| High Scorer Predictor | Open the predictor page             | Player input controls and prediction interface are displayed         | Pass   |
+| Predictor Inputs      | Enter player performance statistics | Submitted values are accepted by the application                     | Pass   |
+| Predictor Output      | Submit player statistics            | A High Scorer or Not High Scorer classification is returned          | Pass   |
+| Model Probability     | Submit player statistics            | Model probability is displayed alongside the classification          | Pass   |
+| Position Input        | Select different playing positions  | Selected position is correctly included in the model input           | Pass   |
+| Saved Pipeline        | Load the deployed predictor         | Saved machine learning pipeline loads successfully                   | Pass   |
+| Heroku Deployment     | Open the deployed application       | Application loads and functions correctly on Heroku                  | Pass   |
+
+### Deployment Testing
+
+Following deployment to Heroku, the live application was manually checked to confirm that:
+
+- The application loaded successfully.
+- All four dashboard pages were accessible.
+- Interactive Plotly visualisations displayed correctly.
+- The saved machine learning pipeline loaded correctly.
+- Player statistics could be submitted through the High Scorer Predictor.
+- Predictions and model probabilities were returned successfully.
 
 ## Deployment
 
@@ -214,10 +289,6 @@ To deploy the application to Heroku:
 - **XGBoost** - Used to build the final `XGBClassifier` high-scorer classification model.
 - **Joblib** - Used to save and load the fitted machine learning pipeline.
 - **Streamlit** - Used to build the interactive dashboard and High Scorer Predictor.
-
-## Main Data Analysis and Machine Learning Libraries
-
-- Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
 
 ## Credits
 
