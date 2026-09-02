@@ -246,6 +246,18 @@ Following deployment to Heroku, the live application was manually checked to con
 - Player statistics could be submitted through the High Scorer Predictor.
 - Predictions and model probabilities were returned successfully.
 
+## Unfixed Bugs and Limitations
+
+There are currently no known unfixed functional bugs within the application.
+
+The following limitations should be considered:
+
+- **Class imbalance** - Only approximately **2.6%** of player-season records are high scorers, making the classification task challenging.
+- **Precision and recall** - The final model achieved **0.80 precision**, exceeding the target of **0.75**, but recall was **0.38**. This reflects the project's priority of reducing false-positive recruitment recommendations.
+- **Feature importance** - `Shots on target` has a strong influence on the model. Feature importance should not be interpreted as causation or a universal threshold for identifying high scorers.
+- **Historical data** - The model was trained on Premier League data from **2015/16 to 2023/24** and may become less representative as player and league patterns change.
+- **Recruitment decisions** - The model identifies characteristics associated with historical high scorers and does not guarantee future goal-scoring performance. It should support, rather than replace, professional scouting.
+
 ## Deployment
 
 ### Heroku
