@@ -14,7 +14,26 @@ The application is intended to support recruitment analysis and scouting decisio
 
 ## Dataset Content
 
-- Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data.
+The dataset contains historical Premier League player performance statistics covering nine seasons from **2015/16 to 2023/24**.
+
+The original data was provided across nine CSV files, with each file representing a single Premier League season. These files were combined into a single dataset during the data collection stage, with a `Season` column added to identify the season associated with each player record.
+
+The data contains player-level performance statistics including:
+
+- Appearances and playing position
+- Shooting and attacking statistics
+- Assists and creative statistics
+- Passing statistics
+- Discipline and defensive statistics
+- Goalkeeper specific stats
+
+During data cleaning, duplicate records, invalid player-season records and inconsistent data formats were identified and handled. Missing values were also investigated to distinguish between structural missing values and genuinely unavailable statistics.
+
+Following data cleaning, the dataset contains **8,196 player-season records** across the nine Premier League seasons.
+
+For machine learning, a binary target variable named `HighScorer` was created. A player is classified as a high scorer when they scored **10 or more goals in a season**.
+
+Feature engineering and feature selection produced **17 predictor features** for the final machine learning model. Goals scored and other features that directly reveal goals scored were excluded from the predictors to prevent data leakage.
 
 ## Business Requirements
 
