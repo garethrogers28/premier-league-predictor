@@ -79,21 +79,21 @@ As a recruitment analyst, I want to view the player analysis and model performan
 
 ### Business Requirement 1 - Data Analysis and Visualisation
 
-Exploratory data analysis and visualisations will be used to investigate the characteristics associated with high-scoring Premier League players. Relevant player statistics and playing positions will be compared against the `HighScorer` target to identify meaningful patterns and relationships.
+Exploratory data analysis and visualisations were used to investigate the characteristics associated with high-scoring Premier League players. Relevant player statistics and playing positions were compared against the `HighScorer` target to identify meaningful patterns and relationships.
 
 ### Business Requirement 2 - Machine Learning
 
-A supervised binary classification task will be used to predict whether a player belongs to the `HighScorer` class.
+A supervised binary classification task was used to predict whether a player belongs to the `HighScorer` class.
 
 Goals scored are excluded from the predictor features because they directly represent the outcome the model is intended to identify.
 
-Multiple classification algorithms will be evaluated using training and unseen test data. As high scorers represent a small minority of the dataset, overall accuracy alone is not an appropriate measure of model success.
+Multiple classification algorithms were evaluated using training and unseen test data. As high scorers represent a small minority of the dataset, overall accuracy alone is not an appropriate measure of model success.
 
-Particular attention will be given to precision for the `HighScorer` class. In the context of player recruitment, a false-positive prediction could lead to a club investing time and money in a player who does not demonstrate the required high-scoring profile. Therefore, reliable positive predictions are more important than identifying every possible high scorer.
+Particular attention was given to precision for the `HighScorer` class. In the context of player recruitment, a false-positive prediction could lead to a club investing time and money in a player who does not demonstrate the required high-scoring profile. Therefore, reliable positive predictions are more important than identifying every possible high scorer.
 
 ### Business Requirement 3 - Dashboard
 
-The key analytical findings and machine learning results will be presented through an interactive Streamlit dashboard, supported by clear visualisations and interpretations.
+The key analytical findings and machine learning results were presented through an interactive Streamlit dashboard, supported by clear visualisations and interpretations.
 
 ## ML Business Case
 
@@ -107,27 +107,27 @@ The model is intended to support player recruitment decisions by highlighting pl
 
 ### Learning Method
 
-Supervised binary classification will be used because the historical training data contains a known `HighScorer` target.
+Supervised binary classification was used because the historical training data contains a known `HighScorer` target.
 
-Multiple classification algorithms will be compared before selecting and optimising the final model.
+Multiple classification algorithms were compared before selecting and optimising the final model.
 
 ### Ideal Outcome and Success/Failure Metrics
 
 The ideal model should make reliable positive predictions so that players identified as potential high scorers are likely to genuinely belong to the `HighScorer` class.
 
-Precision for the `HighScorer=True` class will be used as the primary success metric. A false-positive prediction could lead to a club investing time and money in a player who does not demonstrate the required high-scoring profile.
+Precision for the `HighScorer=True` class was used as the primary success metric. A false-positive prediction could lead to a club investing time and money in a player who does not demonstrate the required high-scoring profile.
 
-Missing a genuine high scorer is considered less costly than incorrectly recommending a player as a high scorer. Recall will therefore be treated as a secondary metric.
+Missing a genuine high scorer is considered less costly than incorrectly recommending a player as a high scorer. Recall was therefore treated as a secondary metric.
 
-F1-score will also be considered to provide additional context on the balance between precision and recall.
+F1-score was also considered to provide additional context on the balance between precision and recall.
 
-The final model will be considered successful if it achieves a precision of at least **0.75** for the `HighScorer` class on unseen test data.
+The final model was considered successful if it achieved a precision of at least **0.75** for the `HighScorer` class on unseen test data.
 
-Training and test performance will also be compared to identify potential overfitting.
+Training and test performance were also compared to identify potential overfitting.
 
 ### Model Output
 
-The model will output a binary prediction indicating whether a player is classified as a potential high scorer.
+The model outputs a binary prediction indicating whether a player is classified as a potential high scorer.
 
 ### Relevance to the User
 
