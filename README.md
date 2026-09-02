@@ -197,6 +197,24 @@ To deploy the application to Heroku:
 
 8. Once the build has completed successfully, select **Open App** to launch the deployed Streamlit application.
 
+## Technologies Used
+
+### Languages
+
+- **Python** - Used for data collection, data cleaning, exploratory data analysis, feature engineering, machine learning and the Streamlit application.
+- **Markdown** - Used throughout the Jupyter notebooks and project documentation to explain the analysis, findings and development process.
+
+### Python Packages
+
+- **Pandas** - Used to load, combine, clean, transform and analyse the Premier League player datasets.
+- **NumPy** - Used for numerical operations and data manipulation during the analysis and machine learning workflow.
+- **Matplotlib** - Used to create data visualisations during exploratory data analysis and model evaluation.
+- **Plotly** - Used to create interactive visualisations for the Streamlit dashboard.
+- **Scikit-learn** - Used for train/test splitting, preprocessing, model pipelines, baseline classification models, model evaluation and hyperparameter optimisation.
+- **XGBoost** - Used to build the final `XGBClassifier` high-scorer classification model.
+- **Joblib** - Used to save and load the fitted machine learning pipeline.
+- **Streamlit** - Used to build the interactive dashboard and High Scorer Predictor.
+
 ## Main Data Analysis and Machine Learning Libraries
 
 - Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
@@ -205,12 +223,6 @@ To deploy the application to Heroku:
 
 - In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
 - You can break the credits section up into Content and Media, depending on what you have included in your project.
-
-### Content
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 ### Media
 
