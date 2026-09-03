@@ -6,6 +6,9 @@ altair<6
 pandas>=2.2,<3
 numpy>=1.26,<3
 
+# Data collection
+kaggle==2.2.4
+
 # Machine learning
 scikit-learn>=1.5,<2
 xgboost>=3,<4
