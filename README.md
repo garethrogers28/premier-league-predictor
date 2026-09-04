@@ -6,7 +6,7 @@ This project is a data analytics and machine learning application designed to su
 
 The project analyses historical Premier League player performance data across nine seasons, from 2015/16 to 2023/24, to investigate the characteristics associated with high-scoring players.
 
-A supervised machine learning model is developed to classify whether a player demonstrates the characteristics of a `HighScorer`, defined as a player who scores 10 or more goals in a season. Goals scored are excluded from the predictor features to prevent data leakage and ensure the model identifies high-scoring characteristics using other player performance statistics.
+A supervised machine learning model is developed to classify whether a player demonstrates the characteristics of a `HighScorer`, defined as a player who scores 10 or more goals in a season. To prevent data leakage, the model uses performance indicators other than goals scored.
 
 The results of the data analysis and machine learning model are presented through an interactive Streamlit dashboard. The dashboard allows users to explore the key analytical findings, review the performance of the machine learning model, and enter player statistics to generate an interactive high-scorer prediction.
 
@@ -33,7 +33,7 @@ Following data cleaning, the dataset contains **8,196 player-season records** ac
 
 For machine learning, a binary target variable named `HighScorer` was created. A player is classified as a high scorer when they scored **10 or more goals in a season**.
 
-Feature engineering and feature selection produced **17 predictor features** for the final machine learning model. Goals scored and other features that directly reveal goals scored were excluded from the predictors to prevent data leakage.
+Feature engineering and feature selection produced **17 predictor features** for the final machine learning model.
 
 ## Business Requirements
 
@@ -79,21 +79,52 @@ As a recruitment analyst, I want to view the player analysis and model performan
 
 ### Business Requirement 1 - Data Analysis and Visualisation
 
+**Mapped user story:** User Story 1
+
+**Mapped task:** Data analysis and visualisation.
+
 Exploratory data analysis and visualisations were used to investigate the characteristics associated with high-scoring Premier League players. Relevant player statistics and playing positions were compared against the `HighScorer` target to identify meaningful patterns and relationships.
+
+**Actions required to enable the task:**
+
+- Collect and combine nine seasons of Premier League player statistics.
+- Clean and standardise the data, then create the `HighScorer` target using the 10-goal threshold.
+- Analyse the target distribution, playing positions, attacking statistics, passing statistics and correlations between relevant variables.
+- Compare high scorers with other players and present each visualisation with a written interpretation and conclusion.
 
 ### Business Requirement 2 - Machine Learning
 
-A supervised binary classification task was used to predict whether a player belongs to the `HighScorer` class.
+**Mapped user story:** User Story 2
 
-Goals scored are excluded from the predictor features because they directly represent the outcome the model is intended to identify.
+**Mapped task:** Supervised binary classification.
 
-Multiple classification algorithms were evaluated using training and unseen test data. As high scorers represent a small minority of the dataset, overall accuracy alone is not an appropriate measure of model success.
+A supervised binary classification task was used to predict whether a
+player belongs to the `HighScorer` class. Goals scored and statistics
+that directly reveal the target were excluded to prevent data leakage.
 
-Particular attention was given to precision for the `HighScorer` class. In the context of player recruitment, a false-positive prediction could lead to a club investing time and money in a player who does not demonstrate the required high-scoring profile. Therefore, reliable positive predictions are more important than identifying every possible high scorer.
+**Actions required to enable the task:**
+
+- Engineer and select predictor features while excluding goals and other features that would cause data leakage.
+- Split the data into stratified training and test sets and handle missing values within the machine learning pipeline.
+- Train and compare Logistic Regression, Random Forest and XGBoost classification models.
+- Optimise the selected XGBoost model with `GridSearchCV`, using precision for the `HighScorer=True` class as the scoring metric.
+- Evaluate training and unseen test performance using classification reports and confusion matrices, then compare test precision with the minimum success target of 0.75.
+- Save the fitted pipeline for use by the interactive predictor.
 
 ### Business Requirement 3 - Dashboard
 
+**Mapped user story:** User Story 3
+
+**Mapped tasks:** Data visualisation, model evaluation presentation and interactive classification.
+
 The key analytical findings and machine learning results were presented through an interactive Streamlit dashboard, supported by clear visualisations and interpretations.
+
+**Actions required to enable the tasks:**
+
+- Create structured Streamlit pages for the project summary, player analysis, project hypothesis, model performance and high-scorer predictor.
+- Add sidebar navigation so the user can move between the five dashboard pages.
+- Present analytical and model-evaluation plots with written interpretations linked to the business requirements.
+- Load the saved machine learning pipeline, collect player statistics through widgets and display the predicted class and high-scorer probability.
 
 ## ML Business Case
 
@@ -137,7 +168,7 @@ The prediction is intended to support recruitment analysis rather than replace w
 
 ### Heuristics and Training Data
 
-The model uses the processed historical Premier League player dataset prepared during the project. Predictor features include player performance statistics and playing position, while goals scored are excluded from the predictors.
+The model uses the processed historical Premier League player dataset prepared during the project. Predictor features include player performance statistics and playing position.
 
 The dataset is split into training and test sets using stratification to preserve the proportion of high scorers. Missing predictor values are imputed using values learned from the training data to prevent test data from influencing model training.
 
