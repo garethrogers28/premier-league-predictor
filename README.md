@@ -143,7 +143,7 @@ The dataset is split into training and test sets using stratification to preserv
 
 ## Dashboard Design
 
-The project results are presented through an interactive Streamlit dashboard consisting of four pages.
+The project results are presented through an interactive Streamlit dashboard consisting of five pages.
 
 ### Project Summary
 
@@ -164,6 +164,19 @@ The page includes:
 - Comparison of attacking statistics between high scorers and other players.
 - Comparison of passing and creative statistics between high scorers and other players.
 - Written interpretations explaining the key findings from each visualisation.
+
+### Project Hypothesis
+
+The Project Hypothesis page presents the project hypothesis and the evidence used to validate it during the exploratory data analysis.
+
+The hypothesis proposes that Premier League players classified as high scorers will demonstrate stronger attacking statistics, particularly shots and shots on target, than players who are not classified as high scorers.
+
+The page includes:
+
+- The project hypothesis.
+- A comparison of average shooting statistics between high scorers and non-high scorers.
+- The key figures identified during the analysis.
+- The outcome of the hypothesis validation.
 
 ### Model Performance
 
@@ -226,13 +239,13 @@ The Streamlit dashboard was manually tested to ensure that the application pages
 | Sidebar Navigation    | Select each page from the sidebar   | Selected page loads correctly                                        | Pass   |
 | Project Summary       | Open the Project Summary page       | Project information and business requirements are displayed          | Pass   |
 | Player Analysis       | Open the Player Analysis page       | Analysis and interactive visualisations are displayed correctly      | Pass   |
+| Project Hypothesis    | Open the Project Hypothesis page    | Hypothesis, validation evidence and outcome are displayed correctly  | Pass   |
 | Model Performance     | Open the Model Performance page     | Model metrics, confusion matrix and feature importance are displayed | Pass   |
 | High Scorer Predictor | Open the predictor page             | Player input controls and prediction interface are displayed         | Pass   |
 | Predictor Inputs      | Enter player performance statistics | Submitted values are accepted by the application                     | Pass   |
 | Predictor Output      | Submit player statistics            | A High Scorer or Not High Scorer classification is returned          | Pass   |
 | Model Probability     | Submit player statistics            | Model probability is displayed alongside the classification          | Pass   |
 | Position Input        | Select different playing positions  | Selected position is correctly included in the model input           | Pass   |
-| Saved Pipeline        | Load the deployed predictor         | Saved machine learning pipeline loads successfully                   | Pass   |
 | Heroku Deployment     | Open the deployed application       | Application loads and functions correctly on Heroku                  | Pass   |
 
 ### Deployment Testing
@@ -240,7 +253,7 @@ The Streamlit dashboard was manually tested to ensure that the application pages
 Following deployment to Heroku, the live application was manually checked to confirm that:
 
 - The application loaded successfully.
-- All four dashboard pages were accessible.
+- All five dashboard pages were accessible.
 - Interactive Plotly visualisations displayed correctly.
 - The saved machine learning pipeline loaded correctly.
 - Player statistics could be submitted through the High Scorer Predictor.
