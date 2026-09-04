@@ -314,15 +314,15 @@ To deploy the application to Heroku:
 
 1. Create a Heroku account and create a new application with a unique application name.
 
-2. Ensure the project contains the required deployment files, including `requirements.txt`, `Procfile` and `.python-version`.
+2. Ensure the project contains the required deployment files, including `requirements.txt`, `Procfile`, `runtime.txt`, `.python-version` and `setup.sh`.
 
-3. The `Procfile` should contain the command used to start the Streamlit application:
+3. The `Procfile` contains the command used to start the Streamlit application:
 
    `web: streamlit run app.py --server.port=$PORT`
 
-4. Streamlit configuration and theme settings are stored in `.streamlit/config.toml`.
+4. The `setup.sh` file contains Streamlit server configuration for Heroku. The current deployment passes the Heroku `$PORT` directly through the `Procfile` and uses the project-level `.streamlit/config.toml` for the active Streamlit configuration, so `setup.sh` is retained in the repository but is not executed by the current `Procfile`.
 
-5. Push the completed project to a GitHub repository.
+5. Streamlit server configuration and theme settings are stored in `.streamlit/config.toml`.
 
 6. From the Heroku application dashboard, open the **Deploy** section and select **GitHub** as the deployment method.
 
