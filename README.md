@@ -335,4 +335,4 @@ To deploy the application to Heroku:
 
 ### Dataset
 
-The Premier League player statistics used in this project were obtained from Kaggle.
+The Premier League player statistics used in this project were obtained from the Kaggle dataset [English Premier League EPL Player Stats(till23/24)](https://www.kaggle.com/datasets/krishanthbarkav/english-premier-leagueepl-player-statistics).
