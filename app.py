@@ -2,6 +2,7 @@ import streamlit as st
 
 from app_pages.project_summary import project_summary_page
 from app_pages.player_analysis import player_analysis_page
+from app_pages.hypothesis import hypothesis_page
 from app_pages.model_performance import model_performance_page
 from app_pages.high_scorer_predictor import high_scorer_predictor_page
 
@@ -15,6 +16,7 @@ page = st.sidebar.radio(
     [
         "🏠 Project Summary",
         "📊 Player Analysis",
+        "💡 Project Hypothesis",
         "🎯 Model Performance",
         "⚽ High Scorer Predictor"
     ]
@@ -25,6 +27,9 @@ if page == "🏠 Project Summary":
 
 elif page == "📊 Player Analysis":
     player_analysis_page()
+
+elif page == "💡 Project Hypothesis":
+    hypothesis_page()
 
 elif page == "🎯 Model Performance":
     model_performance_page()
