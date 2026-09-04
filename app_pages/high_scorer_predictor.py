@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 import joblib
 
+from src.predictive_analysis import predict_high_scorer
+
 
 def high_scorer_predictor_page():
 
@@ -142,8 +144,10 @@ def high_scorer_predictor_page():
 
     if st.button("Predict High Scorer"):
 
-        prediction = pipeline.predict(player_data)[0]
-        probability = pipeline.predict_proba(player_data)[0][1] * 100
+        prediction, probability = predict_high_scorer(
+            player_data,
+            pipeline
+)
 
         if prediction:
             st.success("Prediction: Potential High Scorer")
