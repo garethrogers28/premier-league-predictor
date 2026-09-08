@@ -163,7 +163,7 @@ def player_analysis_page():
         Overall, the analysis demonstrates that **high scorers have
         identifiable performance characteristics beyond goals scored.**
         These findings support the use of player performance statistics
-        as predictors when developingthe machine learning model
+        as predictors when developing the machine learning model
         for **Business Requirement 2**.
         """
     )

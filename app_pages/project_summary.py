@@ -42,7 +42,7 @@ def project_summary_page():
         Goals scored are not included as an input feature because they are
         used to create the **`HighScorer` target**. Including goals as a
         predictor would cause **data leakage** and would not provide a
-        meaningfulprediction of high-scoring potential.
+        meaningful prediction of high-scoring potential.
         """
     )
 
