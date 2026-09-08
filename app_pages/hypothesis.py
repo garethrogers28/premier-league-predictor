@@ -72,7 +72,3 @@ def hypothesis_page():
     **The hypothesis was supported.**  High scorers demonstrate a much
     higher number of shots and shots on target.
     """)
-
-    
-
-    

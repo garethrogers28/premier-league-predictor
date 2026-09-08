@@ -9,12 +9,14 @@ def player_analysis_page():
 
     st.write(
         """
-        **Business Requirement 1:** Analyse Premier League player performance data
-        to identify the characteristics associated with high-scoring players.
+        **Business Requirement 1:** Analyse Premier League player performance
+        data to identify the characteristics associated with high-scoring
+        players.
 
-        An **exploratory data analysis (EDA)** was conducted on the Premier League
-        player dataset. The analysis explores positional, attacking, passing and
-        creative stats associated with the **`HighScorer` target.**
+        An **exploratory data analysis (EDA)** was conducted on the
+        Premier League player dataset. The analysis explores positional,
+        attacking, passing and creative stats associated with the
+        **`HighScorer` target.**
         """
     )
 
@@ -36,9 +38,9 @@ def player_analysis_page():
         """
         **Interpretation:**
 
-        **Forwards have the highest percentage of players classified as high scorers,**
-        followed by midfielders. Defenders and goalkeepers rarely or never reach
-        the 10-goal threshold.
+        **Forwards have the highest percentage of players classified
+        as high scorers,** followed by midfielders. Defenders and goalkeepers
+        rarely or never reach the 10-goal threshold.
 
         This indicates that **playing position is associated with high-scoring
         performance**, with attacking players substantially more likely to be
@@ -63,7 +65,9 @@ def player_analysis_page():
 
     attacking_stats_plot = attacking_stats_means.reset_index()
 
-    attacking_stats_plot["HighScorer"] = attacking_stats_plot["HighScorer"].map({
+    attacking_stats_plot["HighScorer"] = attacking_stats_plot[
+        "HighScorer"
+    ].map({
         False: "Not High Scorer",
         True: "High Scorer"
     })
@@ -82,12 +86,14 @@ def player_analysis_page():
         """
         **Interpretation:**
 
-        **High scorers show higher average values across the attacking statistics
-        analysed.** The largest differences can be seen in statistics associated
-        with attacking involvement and goal-scoring opportunities.
+        **High scorers show higher average values across the attacking
+        statistics analysed.** The largest differences can be seen in
+        statistics associated with attacking involvement and goal-scoring
+        opportunities.
 
-        This suggests that these **attacking performance characteristics may be
-        useful indicators** when identifying players with a high-scoring profile.
+        This suggests that these **attacking performance characteristics
+        may be useful indicators** when identifying players with a high-scoring
+        profile.
         """
     )
 
@@ -114,7 +120,10 @@ def player_analysis_page():
         x="HighScorer",
         y=passing_columns,
         barmode="group",
-        title="Average Passes and Creative Statistics by High Scorer Classification"
+        title=(
+            "Average Passes and Creative Statistics by "
+            "High Scorer Classification"
+        )
     )
 
     st.plotly_chart(fig, width="stretch")
@@ -123,13 +132,13 @@ def player_analysis_page():
         """
         **Interpretation:**
 
-        **High scorers show higher average values across the passing and creative
-        statistics analysed**, including passes per match, crosses, cross accuracy
-        and through balls.
+        **High scorers show higher average values across the passing and
+        creative statistics analysed**, including passes per match, crosses,
+        cross accuracy and through balls.
 
         This suggests that high-scoring players are not only associated with
-        stronger attacking statistics, but also demonstrate **greater involvement
-        in passing and creative play.**
+        stronger attacking statistics, but also demonstrate **greater
+        involvement in passing and creative play.**
         """
     )
 
@@ -147,19 +156,14 @@ def player_analysis_page():
         - **High scorers demonstrate stronger attacking statistics**, including
           greater involvement in assists, goal-scoring opportunities and other
           attacking actions.
-        - **Passing and creative statistics also differ between the two groups**,
-          suggesting that high scorers tend to contribute more broadly to
-          attacking and creative play.
+        - **Passing and creative statistics also differ between the two
+        groups**, suggesting that high scorers tend to contribute more broadly
+        to attacking and creative play.
 
-        Overall, the analysis demonstrates that **high scorers have identifiable
-        performance characteristics beyond goals scored.** These findings support
-        the use of player performance statistics as predictors when developing
-        the machine learning model for **Business Requirement 2**.
+        Overall, the analysis demonstrates that **high scorers have
+        identifiable performance characteristics beyond goals scored.**
+        These findings support the use of player performance statistics
+        as predictors when developingthe machine learning model
+        for **Business Requirement 2**.
         """
     )
-
-
-
-   
-    
-    

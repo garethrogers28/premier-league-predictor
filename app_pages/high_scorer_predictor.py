@@ -13,23 +13,24 @@ def high_scorer_predictor_page():
 
     st.markdown(
         """
-        **Business Requirement 2:** Develop and evaluate a machine learning model
-        that can reliably identify potential high scorers using performance
-        statistics other than goals scored, supporting player recruitment decisions.
+        **Business Requirement 2:** Develop and evaluate a machine learning
+        model that can reliably identify potential high scorers using
+        performancestatistics other than goals scored, supporting player
+        recruitment decisions.
 
-        This page applies the **final fitted machine learning pipeline** to new player
-        performance data to generate a **High Scorer prediction**.
+        This page applies the **final fitted machine learning pipeline** to
+        new player performance data to generate a **High Scorer prediction**.
 
         The interactive predictor also supports **Business Requirement 3** by
-        presenting the machine learning model through the Streamlit dashboard to
-        support the club's recruitment analysis.
+        presenting the machine learning model through the Streamlit dashboard
+        to support the club's recruitment analysis.
         """
     )
 
     st.markdown("---")
 
     pipeline = joblib.load(
-    "outputs/ml_pipeline/high_scorer_pipeline.pkl"
+        "outputs/ml_pipeline/high_scorer_pipeline.pkl"
     )
 
     st.subheader("Player Statistics")
@@ -42,7 +43,7 @@ def high_scorer_predictor_page():
 
     position = st.selectbox(
         "Position",
-        ("Goalkeeper","Defender", "Midfielder", "Forward")
+        ("Goalkeeper", "Defender", "Midfielder", "Forward")
     )
     appearances = st.number_input(
         "Appearances",
@@ -112,7 +113,7 @@ def high_scorer_predictor_page():
         round(shots_on_target / shots * 100)
         if shots > 0
         else 0
-)
+    )
 
     position_goalkeeper = int(position == "Goalkeeper")
     position_defender = int(position == "Defender")
@@ -137,7 +138,7 @@ def high_scorer_predictor_page():
         "Position_Goalkeeper": [position_goalkeeper],
         "Position_Midfielder": [position_midfielder],
         "Assists per Appearance": [assists_per_appearance]
-})
+    })
     st.markdown("---")
 
     st.subheader("Prediction")
@@ -147,15 +148,16 @@ def high_scorer_predictor_page():
         prediction, probability = predict_high_scorer(
             player_data,
             pipeline
-)
+        )
 
         if prediction:
             st.success("Prediction: Potential High Scorer")
 
             st.write(
                 """
-                The player's performance statistics demonstrate **characteristics
-                associated with high-scoring Premier League players.**
+                The player's performance statistics demonstrate
+                **characteristics associated with high-scoring
+                Premier League players.**
                 """
             )
 
@@ -164,32 +166,12 @@ def high_scorer_predictor_page():
 
             st.write(
                 """
-                The player's performance statistics **do not currently demonstrate
-                the characteristics the model associates with high-scoring
-                Premier League players.**
+                The player's performance statistics **do not currently
+                demonstrate the characteristics the model associates with
+                high-scoring Premier League players.**
                 """
             )
 
         st.write(
             f"High Scorer model probability: **{probability:.1f}%**"
         )
-
-
-       
-
-
-
-
-    
-    
-    
-
-
-
-
-
-    
-
-
-
-    
