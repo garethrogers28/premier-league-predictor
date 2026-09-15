@@ -5,6 +5,7 @@ from app_pages.player_analysis import player_analysis_page
 from app_pages.hypothesis import hypothesis_page
 from app_pages.model_performance import model_performance_page
 from app_pages.high_scorer_predictor import high_scorer_predictor_page
+from app_pages.conclusions import conclusions_page
 
 
 st.set_page_config(
@@ -18,7 +19,8 @@ page = st.sidebar.radio(
         "📊 Player Analysis",
         "💡 Project Hypothesis",
         "🎯 Model Performance",
-        "⚽ High Scorer Predictor"
+        "⚽ High Scorer Predictor",
+        "🏁 Project Conclusions"
     ]
 )
 
@@ -36,3 +38,7 @@ elif page == "🎯 Model Performance":
 
 elif page == "⚽ High Scorer Predictor":
     high_scorer_predictor_page()
+
+elif page == "🏁 Project Conclusions":
+    conclusions_page()
+
