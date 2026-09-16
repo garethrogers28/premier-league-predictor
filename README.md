@@ -35,6 +35,34 @@ For machine learning, a binary target variable named `HighScorer` was created. A
 
 Feature engineering and feature selection produced **17 predictor features** for the final machine learning model.
 
+### Data Quality and Cleaning
+
+The data quality and cleaning process involved the following steps:
+
+**Duplicate Records**
+
+- Duplicate player-season records were identified and removed. **6 duplicate records** were identified and removed during data cleaning.
+
+**Invalid Records**
+
+- Invalid player-season records were identified based on inconsistent data structures and missing critical information. **4 invalid records** were removed (player-season records with more than 38 appearances, indicating cumulative rather than single-season statistics).
+
+**Missing Values**
+
+- Missing values were investigated to distinguish between structural and genuine missing values.
+- **Structural missing values** occurred where certain statistics were not applicable (e.g., goalkeepers lack shooting statistics, outfield players lack goalkeeper-specific stats). **10 columns** of structural missing values were replaced with 0 to indicate that these statistics were not recorded for those player roles. These columns included goalkeeper-specific statistics (Saves, Penalties saved, Punches, High Claims, Catches, Sweeper clearances, Throw outs, Goal Kicks) and attacking-specific statistics (Hit woodwork, Big chances created).
+- **Position-specific missing values** (Last man tackles, Clearances off line) were retained as `NaN` because they represent legitimate differences in player roles rather than incomplete data.
+- **Incomplete source data** (Goals per match, Shots, Shots on target, Shooting accuracy %, Big chances missed, Clean sheets, Goals conceded) was retained as `NaN` and handled during model training using median imputation within the machine learning pipeline to prevent test-set leakage.
+
+**Data Standardisation**
+
+- Inconsistent data formats and types were standardised during cleaning to ensure consistency across all nine seasons.
+- Percentage-based features were converted from text (with % symbols) to numeric values.
+- The `Passes` column was cleaned by removing thousands separators (commas) and converting to numeric format.
+- Player names, positions and other categorical variables were standardised to prevent duplicate entries due to formatting differences.
+
+After all cleaning steps, the final dataset contained **8,196 player-season records** ready for analysis and machine learning.
+
 ## Business Requirements
 
 The project is designed as a player recruitment analysis service for a Premier League football club. The aim is to use historical player performance data to support recruitment teams in identifying players who demonstrate the characteristics of high scorers.
