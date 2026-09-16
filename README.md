@@ -368,6 +368,7 @@ The following areas were checked:
 - Logistic Regression, Random Forest and XGBoost classifiers were evaluated on unseen test data.
 - The final optimised XGBoost model achieved a precision of **0.80** for the `HighScorer=True` class on unseen test data, exceeding the project success criterion of **0.75**.
 - The fitted machine learning pipeline was saved and successfully loaded by the Streamlit application.
+- All five notebooks (Data Collection, Data Cleaning, Exploratory Data Analysis, Feature Engineering, Model Development) were successfully executed end-to-end. The dataset was reproduced from raw Kaggle data through to final model output, confirming full reproducibility of the analysis and model development pipeline.
 
 ### Streamlit Dashboard Testing
 
