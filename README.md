@@ -174,7 +174,7 @@ The dataset is split into training and test sets using stratification to preserv
 
 ## Dashboard Design
 
-The project results are presented through an interactive Streamlit dashboard consisting of five pages.
+The project results are presented through an interactive Streamlit dashboard consisting of six pages.
 
 ### Project Summary
 
@@ -239,6 +239,18 @@ The dashboard then displays:
 
 The prediction is intended to support recruitment analysis and should be considered alongside wider scouting information rather than as a standalone recruitment decision.
 
+### Conclusions
+
+The Conclusions page provides an overall project summary and synthesis of key findings.
+
+The page includes:
+
+- A recap of the project's aim to identify high-scoring player characteristics and support recruitment decisions.
+- A summary of the main exploratory analysis findings, highlighting playing position, shots, and creative involvement as key differentiators.
+- An overview of the final machine learning model's performance, including the achieved precision of 0.80 and how it exceeds the business requirement.
+- Guidance on using the model as a supporting tool alongside professional scouting rather than as a standalone decision.
+- A Future Development section outlining potential extensions such as additional seasons, recall improvement strategies, additional features, position-specific models, and ongoing model monitoring.
+
 ## Testing
 
 Testing was carried out throughout the project to ensure that the data processing, machine learning pipeline, Streamlit dashboard and deployed application functioned as expected.
@@ -278,6 +290,7 @@ The Streamlit dashboard was manually tested to ensure that the application pages
 | Model Probability     | Submit player statistics            | Model probability is displayed alongside the classification          | Pass   |
 | Position Input        | Select different playing positions  | Selected position is correctly included in the model input           | Pass   |
 | Heroku Deployment     | Open the deployed application       | Application loads and functions correctly on Heroku                  | Pass   |
+| Conclusions Page      | Open the Conclusions page           | Project synthesis and future development guidance displayed          | Pass   |
 
 ### Deployment Testing
 
