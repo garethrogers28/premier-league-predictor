@@ -121,8 +121,8 @@ The key analytical findings and machine learning results were presented through 
 
 **Actions required to enable the tasks:**
 
-- Create structured Streamlit pages for the project summary, player analysis, project hypothesis, model performance and high-scorer predictor.
-- Add sidebar navigation so the user can move between the five dashboard pages.
+- Create structured Streamlit pages for the project summary, player analysis, project hypothesis, model performance, high-scorer predictor and project conclusions page.
+- Add sidebar navigation so the user can move between the six dashboard pages.
 - Present analytical and model-evaluation plots with written interpretations linked to the business requirements.
 - Load the saved machine learning pipeline, collect player statistics through widgets and display the predicted class and high-scorer probability.
 
@@ -171,6 +171,75 @@ The prediction is intended to support recruitment analysis rather than replace w
 The model uses the processed historical Premier League player dataset prepared during the project. Predictor features include player performance statistics and playing position.
 
 The dataset is split into training and test sets using stratification to preserve the proportion of high scorers. Missing predictor values are imputed using values learned from the training data to prevent test data from influencing model training.
+
+## CRISP-DM Methodology
+
+This project follows the **CRISP-DM (Cross Industry Standard Process for Data Mining)** framework, a standard approach for data science and machine learning projects.
+
+### 1. Business Understanding
+
+The project addresses the business need to support player recruitment decisions by identifying high-scoring player characteristics. The key business objectives are:
+
+- Understand what distinguishes high-scoring players from others.
+- Build a predictive model to support recruitment analysis.
+- Present findings through an accessible interactive dashboard.
+
+Success is measured by achieving a precision of at least 0.75 for the high-scorer classification on unseen test data.
+
+### 2. Data Understanding
+
+Historical Premier League player performance data covering nine seasons (2015/16 to 2023/24) was collected and explored. The data understanding phase involved:
+
+- Combining nine seasonal CSV files into a unified dataset.
+- Investigating data types, missing values and data quality.
+- Distinguishing structural missing values (e.g. goalkeepers without shooting statistics) from genuinely missing data.
+- Identifying that approximately 2.6% of player-season records are classified as high scorers.
+
+### 3. Data Preparation
+
+Data cleaning and feature engineering prepared the raw data for modelling:
+
+- Removed duplicate and invalid player-season records.
+- Standardised data formats and corrected inconsistent types.
+- Engineered 17 predictor features including position encodings and derived statistics.
+- Excluded goals scored and related statistics to prevent data leakage.
+- Applied stratified train-test split (80% training, 20% test) to preserve class proportions.
+- Implemented median imputation for missing values within the machine learning pipeline.
+
+### 4. Modelling
+
+Three baseline classification algorithms were trained and compared:
+
+- **Logistic Regression:** High recall (0.95) but lower precision (0.41).
+- **Random Forest:** Balanced performance with precision 0.67 and recall 0.69.
+- **XGBoost:** Highest baseline precision (0.70), selected for hyperparameter optimisation.
+
+The XGBoost model was optimised using GridSearchCV with 5-fold cross-validation, scoring on precision. Final hyperparameters:
+
+- `learning_rate`: 0.01
+- `max_depth`: 3
+- `n_estimators`: 100
+- `scale_pos_weight`: 1
+
+### 5. Evaluation
+
+The tuned XGBoost model achieved:
+
+- **Test Precision:** 0.80 (exceeds target of 0.75)
+- **Test Recall:** 0.38 (trade-off accepted within business case)
+- **Test F1-score:** 0.52
+
+Evaluation included classification reports, confusion matrices, and feature importance analysis. `Shots on target` emerged as the dominant predictor. The model meets the defined business requirement for reliable positive predictions.
+
+### 6. Deployment
+
+The final model was deployed through:
+
+- Saving the fitted pipeline (imputation + XGBoost classifier) to `outputs/ml_pipeline/high_scorer_pipeline.pkl`.
+- Building an interactive Streamlit dashboard with six pages for exploring findings and making predictions.
+- Deploying the dashboard to Heroku for public access.
+
+The deployed application allows users to enter player statistics and receive high-scorer predictions in real-time, supporting recruitment analysis workflows.
 
 ## Dashboard Design
 
@@ -297,7 +366,7 @@ The Streamlit dashboard was manually tested to ensure that the application pages
 Following deployment to Heroku, the live application was manually checked to confirm that:
 
 - The application loaded successfully.
-- All five dashboard pages were accessible.
+- All six dashboard pages were accessible.
 - Interactive Plotly visualisations displayed correctly.
 - The saved machine learning pipeline loaded correctly.
 - Player statistics could be submitted through the High Scorer Predictor.
