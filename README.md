@@ -271,6 +271,22 @@ The final model was deployed through:
 
 The deployed application allows users to enter player statistics and receive high-scorer predictions in real-time, supporting recruitment analysis workflows.
 
+## Key Exploratory Data Analysis Visualisations
+
+The following charts, produced during the exploratory data analysis, illustrate the strongest patterns identified between player statistics and the `HighScorer` target.
+
+![Percentage of high scorers by position](docs/plots/percentage-of-highscorers-by-position.png)
+
+Playing position shows a clear relationship with high scorer classification, with forwards far more likely to be high scorers than midfielders, and no defenders or goalkeepers reaching the threshold.
+
+![Average attacking statistics by high scorer classification](docs/plots/average-attcking-stats.png)
+
+High scorers recorded substantially higher average values across key attacking statistics, including assists and big chances created, compared with non-high scorers.
+
+![Average passes and creative statistics by high scorer classification](docs/plots/average-passes-creative-stats.png)
+
+High scorers also showed greater involvement in passing and creative play, recording more passes per match, crosses and through balls than non-high scorers.
+
 ## Dashboard Design
 
 The project results are presented through an interactive Streamlit dashboard consisting of six pages.
