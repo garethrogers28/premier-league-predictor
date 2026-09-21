@@ -91,7 +91,14 @@ The hypothesis was investigated during the exploratory data analysis by comparin
 - **Shots on target:** 34.35 compared with 3.81
 - **Shooting accuracy:** 43.46% compared with 15.62%
 
-**Outcome:** The hypothesis was supported, and the null hypothesis was rejected. High scorers demonstrated substantially higher shots, shots on target and shooting accuracy than non-high scorers, confirming that shooting involvement is a key characteristic that distinguishes high scorers from other players.
+As `Shots` and `Shots on target` are both strongly right-skewed, a one-sided **Mann-Whitney U test** (`alternative="greater"`) was used to test whether these descriptive differences are statistically significant, rather than relying on the averages alone:
+
+- **Shots:** U = 915,837.5, p ≈ 1.64 × 10⁻¹³⁹
+- **Shots on target:** U = 925,108.0, p ≈ 2.84 × 10⁻¹⁵²
+
+Both p-values are far below the 0.05 significance threshold.
+
+**Outcome:** The hypothesis was supported, and the null hypothesis was rejected on statistical grounds, not just descriptive averages. High scorers demonstrate significantly higher shots and shots on target than non-high scorers, providing strong statistical evidence that shooting involvement is a key characteristic associated with high scorers.
 
 ## Epics and User Stories
 
