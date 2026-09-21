@@ -77,6 +77,22 @@ The project has three business requirements:
 
 3. Present the key analytical findings and machine learning results through an interactive Streamlit dashboard to support the club's recruitment analysis.
 
+## Hypothesis and Validation
+
+**Hypothesis:** Premier League players classified as high scorers will demonstrate stronger attacking statistics, particularly shots and shots on target, than players who are not classified as high scorers.
+
+**Null Hypothesis (H0):** There is no meaningful difference in shooting statistics (shots and shots on target) between players classified as high scorers and players who are not classified as high scorers.
+
+**How the hypothesis was validated:**
+
+The hypothesis was investigated during the exploratory data analysis by comparing the average shooting statistics of high scorers against non-high scorers:
+
+- **Shots:** 80.23 (high scorers) compared with 11.41 (non-high scorers)
+- **Shots on target:** 34.35 compared with 3.81
+- **Shooting accuracy:** 43.46% compared with 15.62%
+
+**Outcome:** The hypothesis was supported, and the null hypothesis was rejected. High scorers demonstrated substantially higher shots, shots on target and shooting accuracy than non-high scorers, confirming that shooting involvement is a key characteristic that distinguishes high scorers from other players.
+
 ## Epics and User Stories
 
 The project was developed around three main epics that reflect the business requirements and the needs of a recruitment analyst using the application.
