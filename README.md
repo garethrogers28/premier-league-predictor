@@ -1,6 +1,6 @@
 # Premier League High Scorer Predictor
 
-![Am I Responsive](../docs/screenshots/am-i-responsive.png)
+![Am I Responsive](docs/screenshots/am-i-responsive.png)
 
 ## Project Overview
 
@@ -284,7 +284,7 @@ The Project Summary page introduces the project and provides context for the ana
 - The three business requirements.
 - The machine learning business case and success criteria.
 
-![Project Summary page](../docs/screenshots/project-summary.png)
+![Project Summary page](docs/screenshots/project-summary.png)
 
 ### Player Analysis
 
@@ -297,7 +297,7 @@ The page includes:
 - Comparison of passing and creative statistics between high scorers and other players.
 - Written interpretations explaining the key findings from each visualisation.
 
-![Player Analysis page](../docs/screenshots/player-analysis.png)
+![Player Analysis page](docs/screenshots/player-analysis.png)
 
 ### Project Hypothesis
 
@@ -312,7 +312,7 @@ The page includes:
 - The key figures identified during the analysis.
 - The outcome of the hypothesis validation.
 
-![Project Hypothesis page](../docs/screenshots/project-hypothesis.png)
+![Project Hypothesis page](docs/screenshots/project-hypothesis.png)
 
 ### Model Performance
 
@@ -328,7 +328,7 @@ The page includes:
 - Feature importance showing which player statistics contributed most strongly to the model.
 - An interpretation of the final model's performance against the business requirement.
 
-![Model Performance page](../docs/screenshots/model-performance.png)
+![Model Performance page](docs/screenshots/model-performance.png)
 
 ### High Scorer Predictor
 
@@ -344,8 +344,8 @@ The dashboard then displays:
 - The model probability associated with the high-scorer class.
 - A short explanation of the prediction.
 
-![High Scorer Predictor page](../docs/screenshots/high-scorer-predictor.png)
-![High Scorer Predictor result](../docs/screenshots/high-scorer-result.png)
+![High Scorer Predictor page](docs/screenshots/high-scorer-predictor.png)
+![High Scorer Predictor result](docs/screenshots/high-scorer-result.png)
 
 The prediction is intended to support recruitment analysis and should be considered alongside wider scouting information rather than as a standalone recruitment decision.
 
@@ -361,7 +361,7 @@ The page includes:
 - Guidance on using the model as a supporting tool alongside professional scouting rather than as a standalone decision.
 - A Future Development section outlining potential extensions such as additional seasons, recall improvement strategies, additional features, position-specific models, and ongoing model monitoring.
 
-![Conclusions page](../docs/screenshots/project-conclusions.png)
+![Conclusions page](docs/screenshots/project-conclusions.png)
 
 ## Testing
 
