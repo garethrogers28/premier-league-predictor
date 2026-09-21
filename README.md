@@ -35,7 +35,22 @@ Following data cleaning, the dataset contains **8,196 player-season records** ac
 
 For machine learning, a binary target variable named `HighScorer` was created. A player is classified as a high scorer when they scored **10 or more goals in a season**.
 
-Feature engineering and feature selection produced **17 predictor features** for the final machine learning model.
+Feature engineering and feature selection produced **17 predictor features** for the final machine learning model:
+
+- `Appearances`
+- `Blocked shots`
+- `Assists`
+- `Passes per match`
+- `Big chances created`
+- `Crosses`
+- `Offsides`
+- `Hit woodwork`
+- `Shots`
+- `Shots on target`
+- `Shooting accuracy %`
+- `Big chances missed`
+- `Assists per Appearance` (engineered ratio feature)
+- `Position_Defender`, `Position_Forward`, `Position_Goalkeeper`, `Position_Midfielder` (one-hot encoded `Position` categories)
 
 ### Data Quality and Cleaning
 
@@ -276,11 +291,18 @@ The XGBoost model was optimised using GridSearchCV with 5-fold cross-validation,
 
 ### 5. Evaluation
 
-The tuned XGBoost model achieved:
+The tuned XGBoost model achieved the following performance on the training and unseen test sets:
+
+| Dataset  | Precision | Recall | F1-score |
+| -------- | --------- | ------ | -------- |
+| Training | 0.94      | 0.54   | 0.68     |
+| Test     | 0.80      | 0.38   | 0.52     |
 
 - **Test Precision:** 0.80 (exceeds target of 0.75)
 - **Test Recall:** 0.38 (trade-off accepted within business case)
 - **Test F1-score:** 0.52
+
+Precision drops from 0.94 on the training set to 0.80 on the test set, and recall drops from 0.54 to 0.38. This gap indicates some overfitting to the training data, which may partly reflect the small number of high-scorer records (212) available for training. Despite this drop, the test precision of 0.80 still exceeds the 0.75 business target, so the model is considered fit for purpose rather than overfit to an unusable degree.
 
 Evaluation included classification reports, confusion matrices, and feature importance analysis. `Shots on target` emerged as the dominant predictor. The model meets the defined business requirement for reliable positive predictions.
 
