@@ -1,5 +1,7 @@
 # Premier League High Scorer Predictor
 
+![Am I Responsive](../docs/screenshots/am-i-responsive.png)
+
 ## Project Overview
 
 This project is a data analytics and machine learning application designed to support player recruitment decisions for a Premier League football club.
@@ -282,6 +284,8 @@ The Project Summary page introduces the project and provides context for the ana
 - The three business requirements.
 - The machine learning business case and success criteria.
 
+![Project Summary page](../docs/screenshots/project-summary.png)
+
 ### Player Analysis
 
 The Player Analysis page supports **Business Requirement 1** by presenting the main findings from the exploratory data analysis.
@@ -292,6 +296,8 @@ The page includes:
 - Comparison of attacking statistics between high scorers and other players.
 - Comparison of passing and creative statistics between high scorers and other players.
 - Written interpretations explaining the key findings from each visualisation.
+
+![Player Analysis page](../docs/screenshots/player-analysis.png)
 
 ### Project Hypothesis
 
@@ -305,6 +311,8 @@ The page includes:
 - A comparison of average shooting statistics between high scorers and non-high scorers.
 - The key figures identified during the analysis.
 - The outcome of the hypothesis validation.
+
+![Project Hypothesis page](../docs/screenshots/project-hypothesis.png)
 
 ### Model Performance
 
@@ -320,6 +328,8 @@ The page includes:
 - Feature importance showing which player statistics contributed most strongly to the model.
 - An interpretation of the final model's performance against the business requirement.
 
+![Model Performance page](../docs/screenshots/model-performance.png)
+
 ### High Scorer Predictor
 
 The High Scorer Predictor page supports **Business Requirements 2 and 3** by allowing the user to interact with the final trained machine learning pipeline.
@@ -334,6 +344,9 @@ The dashboard then displays:
 - The model probability associated with the high-scorer class.
 - A short explanation of the prediction.
 
+![High Scorer Predictor page](../docs/screenshots/high-scorer-predictor.png)
+![High Scorer Predictor result](../docs/screenshots/high-scorer-result.png)
+
 The prediction is intended to support recruitment analysis and should be considered alongside wider scouting information rather than as a standalone recruitment decision.
 
 ### Conclusions
@@ -347,6 +360,8 @@ The page includes:
 - An overview of the final machine learning model's performance, including the achieved precision of 0.80 and how it exceeds the business requirement.
 - Guidance on using the model as a supporting tool alongside professional scouting rather than as a standalone decision.
 - A Future Development section outlining potential extensions such as additional seasons, recall improvement strategies, additional features, position-specific models, and ongoing model monitoring.
+
+![Conclusions page](../docs/screenshots/project-conclusions.png)
 
 ## Testing
 
