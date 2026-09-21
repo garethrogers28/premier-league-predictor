@@ -538,6 +538,7 @@ To deploy the application to Heroku:
 - **XGBoost** - Used to build the final `XGBClassifier` high-scorer classification model.
 - **Joblib** - Used to save and load the fitted machine learning pipeline.
 - **Streamlit** - Used to build the interactive dashboard and High Scorer Predictor.
+- **SciPy** - Used for statistical significance testing (Mann-Whitney U test) to validate the hypothesis comparing high scorers and non-high scorers.
 
 ## Credits
 
